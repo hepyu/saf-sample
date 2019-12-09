@@ -20,17 +20,20 @@
 	</modules>
 
 	<properties>
-		<saf.version>1.0.4-SNAPSHOT</saf.version>
+		<saf.version>1.0.5</saf.version>
 		<saf-sample.version>1.0.0-SNAPSHOT</saf-sample.version>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-                                <groupId>com.future.saf</groupId>
-                                <artifactId>saf-sample-allinone-api</artifactId>
-                                <version>${saf-sample.version}</version>
-                        </dependency>
+				<groupId>com.future.saf</groupId>
+				<artifactId>saf-sample-allinone-api</artifactId>
+				<version>${saf-sample.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.future.saf</groupId>
 				<artifactId>saf-basic</artifactId>
@@ -104,6 +107,17 @@
 								</pluginExecution>
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<!-- 以指定项目源码的jdk版本，编译后的jdk版本，以及编码。 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
 			</plugins>
