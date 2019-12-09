@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>saf-samples</artifactId>
 		<groupId>com.future.saf</groupId>
-		<version>${saf-sample.version}</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../../</relativePath>
 	</parent>
 
