@@ -27,11 +27,10 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.future.saf</groupId>
-				<artifactId>saf-sample-allinone-api</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-			</dependency>
-
+                                <groupId>com.future.saf</groupId>
+                                <artifactId>saf-sample-allinone-api</artifactId>
+                                <version>${saf-sample.version}</version>
+                        </dependency>
 			<dependency>
 				<groupId>com.future.saf</groupId>
 				<artifactId>saf-basic</artifactId>
