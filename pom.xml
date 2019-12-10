@@ -15,7 +15,7 @@
 	</modules>
 
 	<properties>
-		<saf.version>1.0.5</saf.version>
+		<saf.version>1.0.6</saf.version>
 		<saf-sample.version>1.0.0-SNAPSHOT</saf-sample.version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
