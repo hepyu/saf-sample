@@ -7,7 +7,7 @@
 		<artifactId>saf-samples</artifactId>
 		<groupId>com.future.saf</groupId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
