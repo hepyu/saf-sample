@@ -13,7 +13,7 @@ import com.future.saf.rpc.dubbo.EnableSafDubbo;
 @EnableApolloConfig(value = { "application", "saf.log.level" })
 @EnableApolloConfigAutoChangePrint
 
-@EnableSafDubbo(beanNamePrefix = "shop", instance = "shop", project = "saf-sample-dubbo-apollo-web")
+@EnableSafDubbo(beanNamePrefix = "shoprpc", instance = "shoprpc", project = "saf-sample-dubbo-apollo-web")
 public class SafSampleDubboApolloWebApplication {
 
 	public static void main(String[] args) {
