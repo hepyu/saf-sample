@@ -1,5 +1,6 @@
 package com.future.saf.sample.dubbo.apollo;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +10,7 @@ import com.future.saf.rpc.dubbo.EnableSafDubbo;
 
 @SpringBootApplication
 
+@EnableDubbo(scanBasePackages = "com.future.saf.sample.dubbo.apollo.remote.impl")
 @EnableSafDubbo(beanNamePrefix = "shop", instance = "shop", project = "saf-sample-dubbo-apollo-service")
 // 开启apollo配置中心
 @EnableApolloConfig(value = { "application", "saf.log.level" })
