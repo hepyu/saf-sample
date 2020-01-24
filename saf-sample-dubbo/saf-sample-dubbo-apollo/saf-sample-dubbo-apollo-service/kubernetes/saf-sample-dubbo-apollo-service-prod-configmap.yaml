@@ -7,7 +7,7 @@ data:
     -XX:NumberOfGCLogFiles=12 -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution
     -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=saf-rpc-allinone -XX:+UnlockExperimentalVMOptions
     -XX:+UseCGroupMemoryLimitForHeap -XX:ParallelGCThreads=4
-  appid: demo-allinone-service
+  appid: demo-dubbo-apollo
   #denv: pro
   denv: dev
   sentinel_server: ' '
@@ -15,6 +15,6 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    app: saf-sample-allinone-service-prod
-  name: saf-sample-allinone-service-prod
+    app: saf-sample-dubbo-apollo-service-prod
+  name: saf-sample-dubbo-apollo-service-prod
   namespace: inc

@@ -2,10 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: saf-sample-allinone-service-prod
-    inc-app: saf-sample-allinone-service-prod
+    app: saf-sample-dubbo-apollo-service-prod
+    inc-app: saf-sample-dubbo-apollo-service-prod
     framework: saf
-  name: saf-sample-allinone-service-prod
+  name: saf-sample-dubbo-apollo-service-prod
   namespace: inc
 spec:
   progressDeadlineSeconds: 600
@@ -13,7 +13,7 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: saf-sample-allinone-service-prod
+      app: saf-sample-dubbo-apollo-service-prod
   strategy:
     rollingUpdate:
       maxSurge: 20%
@@ -22,18 +22,18 @@ spec:
   template:
     metadata:
       labels:
-        app: saf-sample-allinone-service-prod
-        inc-app: saf-sample-allinone-service-prod
+        app: saf-sample-dubbo-apollo-service-prod
+        inc-app: saf-sample-dubbo-apollo-service-prod
         ns: inc
         framework: saf
     spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: saf-sample-allinone-service-prod
-        image: saf-sample-allinone-service:1.0.0-SNAPSHOT
+            name: saf-sample-dubbo-apollo-service-prod
+        image: saf-sample-dubbo-apollo-service:1.0.0-SNAPSHOT
         imagePullPolicy: IfNotPresent
-        name: saf-sample-allinone-service-prod
+        name: saf-sample-dubbo-apollo-service-prod
         ports:
         - containerPort: 8080
           name: http
@@ -79,4 +79,4 @@ spec:
       volumes:
       - name: tomcat-data
         persistentVolumeClaim:
-          claimName: saf-sample-allinone-service-prod
+          claimName: saf-sample-dubbo-apollo-service-prod
