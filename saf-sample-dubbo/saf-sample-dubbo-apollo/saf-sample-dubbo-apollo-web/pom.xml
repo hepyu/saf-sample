@@ -11,9 +11,14 @@
 	<artifactId>saf-sample-dubbo-apollo-web</artifactId>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>com.future.saf</groupId>
-			<artifactId>saf-web-classic</artifactId>
+			<artifactId>saf-sample-dubbo-apollo-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-configcenter-apollo</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.future.saf</groupId>
@@ -21,7 +26,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.future.saf</groupId>
-			<artifactId>saf-configcenter-apollo</artifactId>
+			<artifactId>saf-web-classic</artifactId>
 		</dependency>
 
 	</dependencies>

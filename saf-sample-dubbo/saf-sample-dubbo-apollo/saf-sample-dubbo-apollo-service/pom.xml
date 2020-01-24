@@ -29,7 +29,7 @@
 			<groupId>com.future.saf</groupId>
 			<artifactId>saf-web-classic</artifactId>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -38,7 +38,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.future.saf.sample.allinone.SafSampleAllinoneRPCApplication</mainClass>
+					<mainClass>com.future.saf.sample.dubbo.apollo.SafSampleDubboApolloRPCApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>

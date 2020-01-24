@@ -31,12 +31,6 @@
 
 			<dependency>
 				<groupId>com.future.saf</groupId>
-				<artifactId>saf-sample-dubbo-nacos-api</artifactId>
-				<version>${saf-sample.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.future.saf</groupId>
 				<artifactId>saf-sample-dubbo-apollo-api</artifactId>
 				<version>${saf-sample.version}</version>
 			</dependency>
