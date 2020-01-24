@@ -11,7 +11,7 @@ import com.future.saf.rpc.dubbo.EnableSafDubbo;
 @SpringBootApplication
 
 @EnableDubbo(scanBasePackages = "com.future.saf.sample.dubbo.apollo.remote.impl")
-@EnableSafDubbo(beanNamePrefix = "shop", instance = "shop", project = "saf-sample-dubbo-apollo-service")
+@EnableSafDubbo(beanNamePrefix = "shoprpc", instance = "shoprpc", project = "saf-sample-dubbo-apollo-service")
 // 开启apollo配置中心
 @EnableApolloConfig(value = { "application", "saf.log.level" })
 // 系统启动时会打印@EnableApolloConfig中指定的namespace的初始化值；并且如果运行时会打印发生变化的配置。
