@@ -1,5 +1,6 @@
 package com.future.saf.sample.dubbo.apollo;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
@@ -12,6 +13,7 @@ import com.future.saf.rpc.dubbo.EnableSafDubbo;
 @SpringBootApplication
 @EnableApolloConfig(value = { "application", "saf.log.level" })
 @EnableApolloConfigAutoChangePrint
+@EnableDubbo(scanBasePackages = "com.future.saf.sample.dubbo.apollo")
 
 @EnableSafDubbo(beanNamePrefix = "shoprpc", instance = "shoprpc", project = "saf-sample-dubbo-apollo-web")
 public class SafSampleDubboApolloWebApplication {
