@@ -2,10 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: saf-sample-allinone-web-prod
-    inc-app: saf-sample-allinone-web-prod
+    app: saf-sample-dubbo-apollo-web-prod
+    inc-app: saf-sample-dubbo-apollo-web-prod
     framework: saf
-  name: saf-sample-allinone-web-prod
+  name: saf-sample-dubbo-apollo-web-prod
   namespace: inc
 spec:
   progressDeadlineSeconds: 600
@@ -13,7 +13,7 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: saf-sample-allinone-web-prod
+      app: saf-sample-dubbo-apollo-web-prod
   strategy:
     rollingUpdate:
       maxSurge: 20%
@@ -22,24 +22,27 @@ spec:
   template:
     metadata:
       labels:
-        app: saf-sample-allinone-web-prod
-        inc-app: saf-sample-allinone-web-prod
+        app: saf-sample-dubbo-apollo-web-prod
+        inc-app: saf-sample-dubbo-apollo-web-prod
         ns: inc
         framework: saf
     spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: saf-sample-allinone-web-prod
-        image: saf-sample-allinone-web:1.0.0-SNAPSHOT
+            name: saf-sample-dubbo-apollo-web-prod
+        image: saf-sample-dubbo-apollo-web:1.0.0-SNAPSHOT
         imagePullPolicy: IfNotPresent
-        name: saf-sample-allinone-web-prod
+        name: saf-sample-dubbo-apollo-web-prod
         ports:
         - containerPort: 8080
           name: http
           protocol: TCP
         - containerPort: 9145
           name: exporter
+          protocol: TCP
+        - containerPort: 10010
+          name: rpc
           protocol: TCP
         readinessProbe:
           failureThreshold: 10
@@ -67,7 +70,6 @@ spec:
         - mountPath: /data
           name: tomcat-data
       dnsPolicy: ClusterFirst
-      #如果使用阿里云的镜像仓库，需要自己创建secret。
       #imagePullSecrets:
       #- name: inc
       restartPolicy: Always
@@ -77,4 +79,4 @@ spec:
       volumes:
       - name: tomcat-data
         persistentVolumeClaim:
-          claimName: saf-sample-allinone-web-prod
+          claimName: saf-sample-dubbo-apollo-web-prod
