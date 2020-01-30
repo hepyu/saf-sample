@@ -5,9 +5,9 @@ data:
     -XX:+PrintGCApplicationConcurrentTime -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1
     -verbose:gc -Xloggc:/data/inc/logs/gc.log -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20M
     -XX:NumberOfGCLogFiles=12 -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution
-    -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=saf-rpc-allinone -XX:+UnlockExperimentalVMOptions
+    -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=demo-dubbo-apollo-service -XX:+UnlockExperimentalVMOptions
     -XX:+UseCGroupMemoryLimitForHeap -XX:ParallelGCThreads=4
-  appid: demo-dubbo-apollo
+  appid: demo-dubbo-apollo-service
   #denv: pro
   denv: dev
   sentinel_server: ' '
