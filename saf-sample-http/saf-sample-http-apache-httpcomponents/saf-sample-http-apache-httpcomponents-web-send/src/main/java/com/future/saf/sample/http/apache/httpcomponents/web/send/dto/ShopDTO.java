@@ -1,4 +1,4 @@
-package com.future.saf.sample.dubbo.apollo.dto;
+package com.future.saf.sample.http.apache.httpcomponents.web.send.dto;
 
 import lombok.*;
 

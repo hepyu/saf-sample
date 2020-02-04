@@ -33,7 +33,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.future.saf.sample.dubbo.apollo.SafSampleDubboApolloWebApplication</mainClass>
+					<mainClass>com.future.saf.sample.http.apache.httpcomponents.web.send.SafSampleHttpApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>

@@ -1,4 +1,4 @@
-package com.future.saf.sample.dubbo.apollo;
+package com.future.saf.sample.http.apache.httpcomponents.web.send;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,10 +15,10 @@ import com.future.saf.http.apache.httpcomponents.syncimpl.EnableHttpBioClient;
 
 @EnableHttpBioClient(beanNamePrefix = "internet", instance = "internet")
 @EnableHttpBioClient(beanNamePrefix = "demoWebReceive", instance = "demo-web-receive")
-public class SafSampleDubboApolloWebApplication {
+public class SafSampleHttpApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SafSampleDubboApolloWebApplication.class, args);
+		SpringApplication.run(SafSampleHttpApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.future.saf.sample.dubbo.apollo.controller;
+package com.future.saf.sample.http.apache.httpcomponents.web.send.controller;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.future.saf.core.web.WebResult;
 import com.future.saf.http.apache.httpcomponents.syncimpl.HttpBioClient;
-import com.future.saf.sample.dubbo.apollo.dto.ShopDTO;
+import com.future.saf.sample.http.apache.httpcomponents.web.send.dto.ShopDTO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -49,7 +49,7 @@ public class ShopController {
 			log.error(e.getMessage(), e);
 		}
 
-		request = new HttpGet("http://localhost:7010/user/getUser?userId=100");
+		request = new HttpGet("http://saf-sample-http-apache-httpcomponents-web-receive-prod/user/getUser?userId=100");
 		try {
 			HttpResponse response = internetBioClient.execute(UUID.randomUUID().toString(), request, 10,
 					TimeUnit.SECONDS);
