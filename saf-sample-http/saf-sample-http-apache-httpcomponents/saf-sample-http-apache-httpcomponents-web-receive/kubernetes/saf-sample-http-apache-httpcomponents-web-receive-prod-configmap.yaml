@@ -7,7 +7,7 @@ data:
     -XX:NumberOfGCLogFiles=12 -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution
     -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=demo-http-apache-httpcomponents-web-receive -XX:+UnlockExperimentalVMOptions
     -XX:+UseCGroupMemoryLimitForHeap -XX:ParallelGCThreads=4
-  appid: demo-http-apache-httpcomponents-web-receive
+  appid: demo-http-receive
   #denv: pro
   denv: dev
   sentinel_server: ' '

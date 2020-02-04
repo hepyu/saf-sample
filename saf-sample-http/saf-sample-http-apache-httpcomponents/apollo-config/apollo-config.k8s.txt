@@ -1,7 +1,7 @@
 1.项目：saf.base
 
 命名空间：saf.base.registry
-dubbo.registry.address = zookeeper://zk-hs.zookeeper-min:2181
+不会用到注册中心，但是要有这个namespace。
 
 命名空间：saf.log.level
 app.logging.level.performance = info
@@ -10,31 +10,22 @@ app.logging.level.access = info
 app.logging.level.com.future.saf = info
 app.logging.level.root = info
 
-2.项目：demo-dubbo-apollo-service
+2.项目：demo-http-receive
 
 命名空间：application
-dubbo.saf-sample-dubbo-apollo-service.application.name = saf-sample-dubbo-apollo-service
-dubbo.saf-sample-dubbo-apollo-service.module.name = dubbo-sample
-
-dubbo.shoprpc.protocol.name = dubbo
-dubbo.shoprpc.protocol.port = 20880
 
 monitor.prometheus.port = 9145
 monitor.log.delay = 10
 monitor.log.period = 10
 
 server.port = 8080
-#logging.path = /data/logs/demo-dubbo-apollo-service
 
-3.项目：demo-dubbo-apollo-web
+3.项目：demo-http-send
 
 命名空间：application
-dubbo.saf-sample-dubbo-apollo-web.application.name = saf-sample-dubbo-apollo-web
-dubbo.saf-sample-dubbo-apollo-web.module.name = dubbo-sample
 
-monitor.prometheus.port = 9145
+monitor.prometheus.port = 9146
 monitor.log.delay = 10
 monitor.log.period = 10
 
 server.port = 8080
-#logging.path = /data/logs/demo-dubbo-apollo-web
