@@ -5,14 +5,16 @@ data:
     -XX:+PrintGCApplicationConcurrentTime -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1
     -verbose:gc -Xloggc:/data/inc/logs/gc.log -XX:+UseGCLogFileRotation -XX:GCLogFileSize=20M
     -XX:NumberOfGCLogFiles=12 -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution
-    -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=demo-dubbo-apollo-web -XX:+UnlockExperimentalVMOptions
+    -XX:+PrintHeapAtGC -Dahas.namespace=prod -Dproject.name=demo-http-apache-httpcomponents-web-receive -XX:+UnlockExperimentalVMOptions
     -XX:+UseCGroupMemoryLimitForHeap -XX:ParallelGCThreads=4
-  appid: demo-dubbo-apollo-web
+  appid: demo-http-apache-httpcomponents-web-receive
+  #denv: pro
   denv: dev
   sentinel_server: ' '
+  logMode: dev
 kind: ConfigMap
 metadata:
   labels:
-    app: saf-sample-dubbo-apollo-web-prod
-  name: saf-sample-dubbo-apollo-web-prod
+    app: saf-sample-http-apache-httpcomponents-web-receive-prod
+  name: saf-sample-http-apache-httpcomponents-web-receive-prod
   namespace: inc

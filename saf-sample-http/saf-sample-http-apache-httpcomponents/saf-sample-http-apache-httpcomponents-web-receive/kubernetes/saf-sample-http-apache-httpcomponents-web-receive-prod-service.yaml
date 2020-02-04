@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: saf-sample-dubbo-apollo-web-prod
-  name: saf-sample-dubbo-apollo-web-prod
+    app: saf-sample-http-apache-httpcomponents-web-receive-prod
+  name: saf-sample-http-apache-httpcomponents-web-receive-prod
   namespace: inc
 spec:
   ports:
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: saf-sample-dubbo-apollo-web-prod
+    app: saf-sample-http-apache-httpcomponents-web-receive-prod
   sessionAffinity: None
   type: ClusterIP

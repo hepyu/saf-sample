@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    app: saf-sample-http-apache-httpcomponents-web-send-prod
+    inc-app: saf-sample-http-apache-httpcomponents-web-send
+  name: saf-sample-http-apache-httpcomponents-web-send-prod
+  namespace: inc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: saf-sample-http-apache-httpcomponents-web-send-prod

@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: saf-sample-http-apache-httpcomponents-web-send-prod
+  name: saf-sample-http-apache-httpcomponents-web-send-prod
+  namespace: inc
+spec:
+  rules:
+  - host: saf-sample-http-apache-httpcomponents-web-send.future.com
+    http:
+      paths:
+      - backend:
+          serviceName: saf-sample-http-apache-httpcomponents-web-send-prod
+          servicePort: 80
+        path: /
