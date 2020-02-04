@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    app: saf-sample-dubbo-apollo-service-prod
+    inc-app: saf-sample-dubbo-apollo-service
+  name: saf-sample-dubbo-apollo-service-prod
+  namespace: inc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: saf-sample-dubbo-apollo-service-prod

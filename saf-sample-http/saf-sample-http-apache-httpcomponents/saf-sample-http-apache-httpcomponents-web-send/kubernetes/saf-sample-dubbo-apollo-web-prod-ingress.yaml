@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: saf-sample-dubbo-apollo-web-prod
+  name: saf-sample-dubbo-apollo-web-prod
+  namespace: inc
+spec:
+  rules:
+  - host: saf-sample-dubbo-apollo-web.future.com
+    http:
+      paths:
+      - backend:
+          serviceName: saf-sample-dubbo-apollo-web-prod
+          servicePort: 80
+        path: /

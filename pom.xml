@@ -12,6 +12,7 @@
 	<modules>
 		<module>saf-sample-allinone</module>
 		<module>saf-sample-dubbo</module>
+		<module>saf-sample-http</module>
 	</modules>
 
 	<properties>
@@ -83,6 +84,11 @@
 			<dependency>
 				<groupId>com.future.saf</groupId>
 				<artifactId>saf-rpc-dubbo</artifactId>
+				<version>${saf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.future.saf</groupId>
+				<artifactId>saf-http-apache-httpcomponents</artifactId>
 				<version>${saf.version}</version>
 			</dependency>
 			<dependency>
