@@ -26,6 +26,10 @@ monitor.log.period = 10
 server.port = 8080
 #logging.path = /data/logs/demo-dubbo-apollo-service
 
+management.endpoint.health.show-details = always
+management.health.defaults.enabled = false
+management.endpoints.web.exposure.include = info, health, prometheus
+
 3.项目：demo-dubbo-apollo-web
 
 命名空间：application
@@ -38,3 +42,7 @@ monitor.log.period = 10
 
 server.port = 8081
 #logging.path = /data/logs/demo-dubbo-apollo-web
+
+management.endpoint.health.show-details = always
+management.health.defaults.enabled = false
+management.endpoints.web.exposure.include = info, health, prometheus
