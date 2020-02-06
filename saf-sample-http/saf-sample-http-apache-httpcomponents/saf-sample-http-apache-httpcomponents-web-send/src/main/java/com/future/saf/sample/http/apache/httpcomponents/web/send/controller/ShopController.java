@@ -25,8 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/shop")
 public class ShopController {
 
-	@Resource(name = "defaultHttpBioClient")
-	private HttpBioClient defaultHttpBioClient;
+	@Resource(name = "internetHttpBioClient")
+	private HttpBioClient internetHttpBioClient;
+
+	@Resource(name = "demoWebReceiveHttpBioClient")
+	private HttpBioClient demoWebReceiveHttpBioClient;
 
 	@RequestMapping("/getShop")
 	public WebResult<ShopDTO> getShop(@RequestParam(name = "shopId") Long shopId) {
@@ -35,7 +38,7 @@ public class ShopController {
 
 		HttpUriRequest request = new HttpGet("http://www.baidu.com");
 		try {
-			HttpResponse response = defaultHttpBioClient.execute(UUID.randomUUID().toString(), request, 10,
+			HttpResponse response = internetHttpBioClient.execute(UUID.randomUUID().toString(), request, 10,
 					TimeUnit.SECONDS);
 			// 通过返回对象获取返回数据
 			HttpEntity entity = response.getEntity();
@@ -48,7 +51,7 @@ public class ShopController {
 
 		request = new HttpGet("http://saf-sample-http-apache-httpcomponents-web-receive-prod/user/getUser?userId=100");
 		try {
-			HttpResponse response = defaultHttpBioClient.execute(UUID.randomUUID().toString(), request, 10,
+			HttpResponse response = demoWebReceiveHttpBioClient.execute(UUID.randomUUID().toString(), request, 10,
 					TimeUnit.SECONDS);
 			// 通过返回对象获取返回数据
 			HttpEntity entity = response.getEntity();

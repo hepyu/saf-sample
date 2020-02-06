@@ -13,7 +13,8 @@ import com.future.saf.http.apache.httpcomponents.syncimpl.EnableHttpBioClient;
 @EnableApolloConfig(value = { "application", "saf.log.level" })
 @EnableApolloConfigAutoChangePrint
 
-@EnableHttpBioClient(beanNamePrefix = "default", instance = "default", project = "demo-web-send")
+@EnableHttpBioClient(beanNamePrefix = "internet", instance = "internet", project = "demo-web-send")
+@EnableHttpBioClient(beanNamePrefix = "demoWebReceive", instance = "demo-web-receive", project = "demo-web-send")
 public class SafSampleHttpApplication {
 
 	public static void main(String[] args) {
