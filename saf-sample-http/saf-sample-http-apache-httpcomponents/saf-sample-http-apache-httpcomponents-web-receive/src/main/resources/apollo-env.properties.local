@@ -1,4 +1,4 @@
-dev.meta=http://dev-apollo-configservice
+dev.meta=http://172.19.0.3:8080
 #fat==test
 fat.meta=http://fat-apollo-configservice
 #uat==staging
