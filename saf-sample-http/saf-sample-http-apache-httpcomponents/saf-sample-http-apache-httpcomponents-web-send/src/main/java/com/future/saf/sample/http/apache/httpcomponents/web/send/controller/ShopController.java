@@ -25,10 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/shop")
 public class ShopController {
 
-	@Resource(name = "internetHttpBioClient")
+	@Resource(name = "internetApacheHttpcomponentsBioClient")
 	private ApacheHttpcomponentsBioClient internetHttpBioClient;
 
-	@Resource(name = "demoWebReceiveHttpBioClient")
+	@Resource(name = "demoWebReceiveApacheHttpcomponentsBioClient")
 	private ApacheHttpcomponentsBioClient demoWebReceiveHttpBioClient;
 
 	@RequestMapping("/getShop")
@@ -50,6 +50,8 @@ public class ShopController {
 		}
 
 		request = new HttpGet("http://saf-sample-http-apache-httpcomponents-web-receive-prod/user/getUser?userId=100");
+		// request = new
+		// HttpGet("http://localhost:7010/user/getUser?userId=100");
 		try {
 			HttpResponse response = demoWebReceiveHttpBioClient.execute(UUID.randomUUID().toString(), request, 10,
 					TimeUnit.SECONDS);
