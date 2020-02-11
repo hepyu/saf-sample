@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.future.saf.core.web.WebResult;
-import com.future.saf.http.apache.httpcomponents.syncimpl.HttpBioClient;
+import com.future.saf.http.apache.httpcomponents.syncimpl.ApacheHttpcomponentsBioClient;
 import com.future.saf.sample.http.apache.httpcomponents.web.send.dto.ShopDTO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -26,10 +26,10 @@ import lombok.extern.slf4j.Slf4j;
 public class ShopController {
 
 	@Resource(name = "internetHttpBioClient")
-	private HttpBioClient internetHttpBioClient;
+	private ApacheHttpcomponentsBioClient internetHttpBioClient;
 
 	@Resource(name = "demoWebReceiveHttpBioClient")
-	private HttpBioClient demoWebReceiveHttpBioClient;
+	private ApacheHttpcomponentsBioClient demoWebReceiveHttpBioClient;
 
 	@RequestMapping("/getShop")
 	public WebResult<ShopDTO> getShop(@RequestParam(name = "shopId") Long shopId) {
