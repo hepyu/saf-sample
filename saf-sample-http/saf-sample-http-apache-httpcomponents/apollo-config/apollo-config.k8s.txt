@@ -20,6 +20,24 @@ monitor.log.period = 10
 
 server.port = 8080
 
+sentinel.namespace = sentinel.demo-web-receive
+sentinel.flow-rule-key = sentinel.flow-rule-key
+sentinel.default-flow-rules = []
+
+命名空间：sentinel.demo-web-receive
+
+sentinel.flow-rule-key=
+[
+    {
+        "resource": "Http::In",
+        "controlBehavior": 0,
+        "count": 0,
+        "grade": 1,
+        "limitApp": "default",
+        "strategy": 0
+    }
+]
+
 3.项目：demo-http-send
 
 命名空间：application
@@ -29,3 +47,21 @@ monitor.log.delay = 10
 monitor.log.period = 10
 
 server.port = 8080
+
+sentinel.namespace = sentinel.demo-web-send
+sentinel.flow-rule-key = sentinel.flow-rule-key
+sentinel.default-flow-rules = []
+
+命名空间：sentinel.demo-web-send
+
+sentinel.flow-rule-key=
+[
+    {
+        "resource": "Http::In",
+        "controlBehavior": 0,
+        "count": 1,
+        "grade": 1,
+        "limitApp": "default",
+        "strategy": 0
+    }
+]
