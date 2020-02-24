@@ -13,7 +13,7 @@ import com.future.saf.rpc.dubbo.EnableSafDubbo;
 @EnableDubbo(scanBasePackages = "com.future.saf.sample.dubbo.apollo.remote.impl")
 @EnableSafDubbo(beanNamePrefix = "shoprpc", instance = "shoprpc", project = "saf-sample-dubbo-apollo-service")
 // 开启apollo配置中心
-@EnableApolloConfig(value = { "application", "saf.log.level" })
+@EnableApolloConfig(value = { "application", "saf.log.level", "saf.dubbo.method-config" })
 // 系统启动时会打印@EnableApolloConfig中指定的namespace的初始化值；并且如果运行时会打印发生变化的配置。
 @EnableApolloConfigAutoChangePrint
 
