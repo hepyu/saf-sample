@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.future.saf</groupId>
+		<artifactId>saf-sample-rocketmq</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>saf-sample-rocketmq-transaction</artifactId>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<mybatis-plus.version>3.1.0</mybatis-plus.version>
+		<guava.version>23.0</guava.version>
+		<commons.lang3.version>3.6</commons.lang3.version>
+		<druid.version>1.1.6</druid.version>
+		<fastjson.version>1.2.44</fastjson.version>
+		<freemarker.version>2.3.28</freemarker.version>
+		<lombok.version>1.16.8</lombok.version>
+		<mysql-connector-java.version>5.1.38</mysql-connector-java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-web-classic</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.future.saf</groupId>
+					<artifactId>saf-logging-apollo</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-logging-basic</artifactId>
+			<version>1.0.7-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-mq-rocketmq</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-db-druid</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>

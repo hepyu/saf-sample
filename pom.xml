@@ -13,6 +13,8 @@
 		<module>saf-sample-allinone</module>
 		<module>saf-sample-dubbo</module>
 		<module>saf-sample-http</module>
+		<module>saf-sample-netty</module>
+		<module>saf-sample-rocketmq</module>
 	</modules>
 
 	<properties>

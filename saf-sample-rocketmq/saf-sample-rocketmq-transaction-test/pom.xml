@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.future.saf</groupId>
+		<artifactId>saf-sample-rocketmq</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>saf-sample-rocketmq-transaction</artifactId>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<mybatis-plus.version>3.1.0</mybatis-plus.version>
+		<guava.version>23.0</guava.version>
+		<commons.lang3.version>3.6</commons.lang3.version>
+		<druid.version>1.1.6</druid.version>
+		<fastjson.version>1.2.44</fastjson.version>
+		<freemarker.version>2.3.28</freemarker.version>
+		<lombok.version>1.16.8</lombok.version>
+		<mysql-connector-java.version>5.1.38</mysql-connector-java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-web-classic</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.future.saf</groupId>
+					<artifactId>saf-logging-apollo</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-mq-rocketmq</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.future.saf</groupId>
+			<artifactId>saf-db-druid</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.mybatis</groupId>
+					<artifactId>mybatis</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mybatis</groupId>
+					<artifactId>mybatis-spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!--MySQL JDBC驱动 -->
+		<!-- <dependency> -->
+		<!-- <groupId>mysql</groupId> -->
+		<!-- <artifactId>mysql-connector-java</artifactId> -->
+		<!-- <version>${mysql-connector-java.version}</version> -->
+		<!-- <scope>runtime</scope> -->
+		<!-- </dependency> -->
+		<!--MyBatis-plus 插件依赖 -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-generator</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+			<version>2.1.2.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-to-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.freemarker</groupId> -->
+		<!-- <artifactId>freemarker</artifactId> -->
+		<!-- <version>${freemarker.version}</version> -->
+		<!-- </dependency> -->
+		<!--阿里 FastJson依赖 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.alibaba</groupId> -->
+		<!-- <artifactId>fastjson</artifactId> -->
+		<!-- <version>${fastjson.version}</version> -->
+		<!-- </dependency> -->
+		<!--阿里 Druid Spring Boot Starter依赖 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.alibaba</groupId> -->
+		<!-- <artifactId>druid-spring-boot-starter</artifactId> -->
+		<!-- <version>${druid.version}</version> -->
+		<!-- </dependency> -->
+		<!--lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+
+</project>

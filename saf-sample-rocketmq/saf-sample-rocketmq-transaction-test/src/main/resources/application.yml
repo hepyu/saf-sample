@@ -1,0 +1,17 @@
+#开发环境配置
+spring:
+  profiles:
+    active: dev
+  #数据源配置
+  datasource:
+    #url: jdbc:mysql://127.0.0.1:3307/fescar?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true&amp;useSSL=true
+    url: jdbc:mysql://127.0.0.1:3307/fescar?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#开发环境打印sql
+logging:
+  level:
+    com.future.saf.sample.rocketmq.biz.mapper: debug

@@ -1,0 +1,13 @@
+1.mac本地docker部署mysql
+docker-3：mac使用docker本地部署多个mysqlDB
+https://mp.weixin.qq.com/s/zp20rXzBi6Nu4LMaTSZapQ
+
+我们使用这个端口：
+mysql -uroot -p -P3307 -h 127.0.0.1
+
+初始化DB数据库：
+sql/table.sql
+
+2.mac本地docker部署rocketmq
+
+
