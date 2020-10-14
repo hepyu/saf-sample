@@ -56,7 +56,7 @@ public class TransactionListenerImpl implements TransactionListener {
 				state = LocalTransactionState.ROLLBACK_MESSAGE;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		}
 		return state;
 	}

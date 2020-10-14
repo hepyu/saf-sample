@@ -31,43 +31,50 @@ import org.apache.rocketmq.client.producer.TransactionMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.future.saf.sample.rocketmq.transaction.common.Constant;
+import com.future.saf.sample.rocketmq.transaction.mq.config.RocketmqConfig;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
 public class TransactionMsgProducer implements InitializingBean {
-	private static TransactionMQProducer producer = new TransactionMQProducer("please_rename_unique_group_name");
+	private TransactionMQProducer producer;
+
+	@Autowired
+	private RocketmqConfig rocketmqConfig;
 
 	@Resource
 	private TransactionListenerImpl transactionListener;
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		producer.setNamesrvAddr(Constant.Rocketmq_Namesrv);
-		// 设置大点，资源有限，慢。
-		producer.setSendMsgTimeout(10 * 10000);
+		producer = new TransactionMQProducer(rocketmqConfig.getProducerGroup());
+
+		producer.setNamesrvAddr(rocketmqConfig.getNameServer());
+		producer.setSendMsgTimeout(rocketmqConfig.getSendMsgTimeout());
 
 		ExecutorService executorService = new ThreadPoolExecutor(2, 5, 100, TimeUnit.SECONDS,
 				new ArrayBlockingQueue<Runnable>(2000), new ThreadFactory() {
 					@Override
 					public Thread newThread(Runnable r) {
 						Thread thread = new Thread(r);
-						thread.setName("client-transaction-msg-check-thread");
+						thread.setName("transaction-producer-thread");
 						return thread;
 					}
 				});
 
+		// set executor-service
 		producer.setExecutorService(executorService);
 		// 设置回调检查监听器
 		producer.setTransactionListener(transactionListener);
 		try {
 			producer.start();
 		} catch (MQClientException e) {
-			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		}
 
 		new Thread(new Runnable() {
