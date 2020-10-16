@@ -1,11 +1,9 @@
-server:
-  #端口号
-  port: 7000
-  #项目名，如果不设定，默认是 /
-  #context-path: /demo
-
-rocketmq:
-  producer:
-    group: producerGroup
-    send-msg-timeout: 10000
-  name-server: 127.0.0.1:9876  
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: saf-sample-rocketmq-transaction
+  mvc:
+    throw-exception-if-no-handler-found: true
